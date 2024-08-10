@@ -1,0 +1,34 @@
+    class order {
+    int orderId;
+    int orderNumber;
+    int location;
+    int amount;
+    int gst;
+
+
+    public order(int orderId, int orderNumber, int location, int amount, int gst) {
+        this.orderId = orderId;
+        this.orderNumber = orderNumber;
+        this.location = location;
+        this.amount = amount;
+        this.gst = gst;
+    }
+    int totalAmount(){
+       int a=(amount*gst /100)+amount;
+     return a;
+    }
+
+}
+class  Client extends order{
+    String clientName,clientCity;
+    int clientCreditLimit,totalCredit;
+
+   Client(int orderId, int orderNumber, int location, int amount, int gst,String clientName,int clientCreditLimit,int totalCredit) {
+        super(orderId, orderNumber, location, amount, gst);
+    }
+}
+
+
+public class finalc{
+
+    }
