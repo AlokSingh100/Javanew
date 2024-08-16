@@ -1,4 +1,6 @@
-    class order {
+package PRODUCT;
+
+class order {
     int orderId;
     int orderNumber;
     int location;
@@ -14,8 +16,8 @@
         this.gst = gst;
     }
     int totalAmount(){
-       int a=(amount*gst /100)+amount;
-     return a;
+        int a=(amount*gst /100)+amount;
+        return a;
     }
 
 }
@@ -23,12 +25,17 @@ class  Client extends order{
     String clientName,clientCity;
     int clientCreditLimit,totalCredit;
 
-   Client(int orderId, int orderNumber, int location, int amount, int gst,String clientName,int clientCreditLimit,int totalCredit) {
+    public Client(int orderId, int orderNumber, int location, int amount, int gst, String clientName, String clientCity, int clientCreditLimit, int totalCredit) {
         super(orderId, orderNumber, location, amount, gst);
+        this.clientName = clientName;
+        this.clientCity = clientCity;
+        this.clientCreditLimit = clientCreditLimit;
+        this.totalCredit = totalCredit;
     }
+
 }
 
 
-public class finalc{
+class finalc{
 
-    }
+}
