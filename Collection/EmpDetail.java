@@ -82,7 +82,7 @@ public class EmpDetail {
                             break;
                         }
                         dat++;
-                    }\xdcffrefdvfvf  fdvggrgtrgthtytgtrgtr \
+                    }
             }
 
         }
