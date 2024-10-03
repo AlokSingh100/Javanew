@@ -1,5 +1,7 @@
 package Collection;
 
+import java.util.Comparator;
+
 public class Employee {
 
     int empid;
@@ -39,5 +41,27 @@ public class Employee {
     @Override
     public String toString() {
         return "      "+empid+"           "+ empname+ "              "+salary ;
+    }
+}
+
+class empId implements Comparator<Employee>{
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        return o1.empid- o2.empid;
+    }
+}
+class empName implements Comparator<Employee>{
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        return (int) o1.empname.compareTo(o2.empname);
+    }
+}
+class empSALARY implements Comparator<Employee>{
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        return (int) ((int) o1.salary-o2.salary);
     }
 }
