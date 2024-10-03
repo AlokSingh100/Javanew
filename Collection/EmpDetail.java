@@ -5,6 +5,7 @@ package Collection;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,6 +24,7 @@ public class EmpDetail {
             System.out.println("3: Search");
             System.out.println("4: Update");
             System.out.println("5: Delete");
+            System.out.println("6: Sorting");
 
             select=scanner.nextInt();
             switch (select){
@@ -107,6 +109,39 @@ public class EmpDetail {
 
                     }
                     break;
+                case 6:
+                    System.out.println("Sort BY :");
+                    System.out.println("1:By Employee ID");
+                    System.out.println("2:By Employee Name");
+                    System.out.println("3:By Employee Salary");
+                    dat=scanner.nextInt();
+                    switch (dat){
+                        case 1:
+                            System.out.println("Sorted By Employee ID");
+                            Collections.sort(emp,new empId());
+                             System.out.println("Employee ID  | Employee Name  | Employee Salary ");
+                             for (Employee em:emp){
+                                 System.out.println(em);
+                             }
+                             break;
+                        case 2:
+                            System.out.println("Sorted By Employee Name");
+                            Collections.sort(emp,new empName());
+                             System.out.println("Employee ID  | Employee Name  | Employee Salary ");
+                             for (Employee em:emp){
+                                 System.out.println(em);
+                             }
+                             break;
+                        case 3:
+                            System.out.println("Sorted By Employee Salary");
+                            Collections.sort(emp,new empSALARY());
+                             System.out.println("Employee ID  | Employee Name  | Employee Salary ");
+                             for (Employee em:emp){
+                                 System.out.println(em);
+                             }
+                             break;
+
+                    }
                 default:
                     System.out.println("Enter the right Input");
                     break;
