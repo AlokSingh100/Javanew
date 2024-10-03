@@ -3,6 +3,7 @@ package Collection;
 
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,8 +13,8 @@ public class EmpDetail {
         List<Employee> emp=new ArrayList<Employee>();
         Scanner scanner=new Scanner(System.in);
         int select = 0, fet=0;
-        int idt=0,sid=0,ia=0,j=0,nit,fir,sip,dat = 0;
-        String name,sir ;
+        int idt=0,sid=0,nit,fir,sip,dat;
+        String name,sir,lat;
         Float salary,tir ;
         while (true){
             System.out.println("Select Any one Option");
@@ -51,6 +52,7 @@ public class EmpDetail {
 //                        System.out.println("idt ="+emp.get(i).getEmpid() );
                         if (sid==emp.get(i).getEmpid()) {
                             System.out.println( emp.get(i));
+                            System.out.println(" ");
                             break;
                         }
 //                        System.out.println(i);
@@ -58,32 +60,48 @@ public class EmpDetail {
                     break;
                 case 4:
                 	   System.out.println("Enter the Employee id ");
+
                         nit=scanner.nextInt();
+                    System.out.println("");
                        for(int  i=0;i<=emp.size();i++) {
 
-                    	   if (idt==emp.get(i).getEmpid()) {
-                               System.out.println("Enter new employee id");
-                       fir=scanner.nextInt();
-                    System.out.println("Enter Employee Name");
-                    sir=scanner.next();
-                    System.out.println("Enter the Employee Salary");
-                    tir=scanner.nextFloat();
-                    emp.get(i).setEmpid(fir);
-                    emp.get(i).setEmpname(sir);
-                    emp.get(i).setSalary(tir);
-                    		   break;
-                    	   }
-                           j++;
-                       }
+                    	   if (nit==emp.get(i).getEmpid()) {
 
-                    break;
+
+
+                                           System.out.println("Enter new employee id");
+                                            fir=scanner.nextInt();
+                                           emp.get(i).setEmpid(fir);
+
+                                           System.out.println("Enter Employee Name");
+                                            sir=scanner.next();
+                                            emp.get(i).setEmpname(sir);
+
+
+                                            System.out.println("Enter the Employee Salary");
+                                            tir=scanner.nextFloat();
+                                            emp.get(i).setSalary(tir);
+
+                                   }
+
+
+
+
+
+
+                               System.out.println("Updated Successfully");
+
+                           }
+                    		   break;
+
                 case 5:
                     System.out.println("Enter the Employee id ");
                     sip=scanner.nextInt();
                     for(int  i=0;i<=emp.size();i++) {
 
-                        if (idt==emp.get(i).getEmpid()) {
+                        if (sip==emp.get(i).getEmpid()) {
                             emp.remove(i);
+                            System.out.println("Delete Successfully ");
                             break;
                         }
 
